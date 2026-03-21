@@ -1,0 +1,18 @@
+nav {
+  padding: 11px 90px;
+  margin: 45px auto;
+  align-items: center;
+
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    li {
+      cursor: pointer;
+    }
+  }
+}
