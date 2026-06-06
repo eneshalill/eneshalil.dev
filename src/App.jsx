@@ -17,7 +17,7 @@ import { IoCallOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import ScrollToTop from "./components/scrolltotop/ScrollToTop";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import { FiMapPin } from "react-icons/fi";
 
 const App = () => {
