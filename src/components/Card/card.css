@@ -1,0 +1,177 @@
+/* الحاوية الخارجية لكل القسم (لو أردت خلفية مثلاً) */
+.portfolio-full-wrapper {
+  width: 100%;
+  padding-top: 50px;
+}
+
+/* الحاوية الموحدة: هي التي تضمن أن العنوان والزر والكروت على نفس الخط */
+.main-unified-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+/* تنسيق قسم العنوان (Projects سابقاً) */
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* لجمالية المحاذاة مع السطر الأخير */
+  width: 100%;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.portfolio-label {
+  color: #3b82f6;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.projects-title {
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--text-title);
+    transition: color 0.3s ease;
+
+  line-height: 1.2;
+  margin: 0;
+}
+
+.projects-title .work {
+  display: block;
+}
+
+.blue-text {
+  color: #0c96e2;
+}
+
+.github-btn {
+  background-color: var(--primary-blue);
+  gap: 10px;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition:background-color 0.3s ease, transform 0.3s ease;
+}
+
+.github-btn:hover {
+  background-color: #0b84c7;
+  transform: translateY(-2px);
+}
+
+/* تنسيق شبكة الكروت (Card سابقاً) */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px 28px;
+  width: 100%; /* تأخذ كامل عرض الـ unified-container */
+}
+
+.card {
+  background: var(--bg-body);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--shadow-color-hover);
+}
+
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  backdrop-filter: blur(2px);
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.overlay-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(20px);
+}
+
+.card:hover .overlay-icon {
+  transform: translateY(0);
+}
+
+.overlay-icon:hover {
+  background: #0c96e2;
+  border-color: #0c96e2;
+}
+
+.card-info {
+  position: relative;
+  padding: 15px;
+  line-height: 1.5;
+}
+
+.card-info h6 {
+  margin: 10px 0 5px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.card-info p {
+  color: var(--text-body);
+    transition: color 0.3s ease;
+
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.icon-card {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+    cursor: pointer;
+
+}

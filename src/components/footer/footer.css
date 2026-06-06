@@ -1,0 +1,72 @@
+.footer-wrapper {
+    width: 100%;
+    margin-top: 50px; /* مسافة عن قسم الفورم */
+}
+
+/* الخط المستقيم الفاصل */
+.footer-line {
+    border: 0;
+    border-top: 1px solid rgba(190, 192, 191, 1); /* لون رمادي خفيف جداً كما في الصورة */
+    max-width: 1350px;
+    width: 100%;
+    margin: 35px auto;
+}
+
+.footer-container {
+    max-width: 1350px; /* المسطرة الموحدة للموقع */
+    width: 100%;
+    margin: 0 auto; /* هذا هو السر لتوسيط المحتوى بدلاً من margin-left */
+    padding: 0 15px 40px 15px; /* مسافة داخلية وحماية للجوانب */
+    display: flex;
+    justify-content: space-between; /* توزيع القطع الثلاث بالتساوي */
+    align-items: center;
+}
+
+/* تنسيق النصوص */
+.footer-copyright p, .footer-dev p {
+    color: var(--text-title);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-dev span {
+    color: #0c96e2; /* اللون الأزرق لاسم المطور */
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* تنسيق الأيقونات */
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 32.25px;
+    height: 32px;
+    background-color: #0c96e2;
+    color: white;
+    border-radius: 50%; /* دائرة كاملة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+/* لضمان التجاوب مع الجوال */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

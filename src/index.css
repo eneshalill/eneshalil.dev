@@ -1,8 +1,66 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+* {
   margin: 0;
-padding: 0;
-box-sizing: border-box;
- font-family: "Poppins", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
+.border {
+  border: 2px solid red;
+}
+
+/* ربط الـ body بالمتغيرات بشكل إجباري وصارم */
+body {
+  background-color: var(--bg-body) ;
+  color: var(--text-body) ;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* ================== 1. الوضع الفاتح (Light Mode) ================== */
+:root {
+  --primary-blue: rgb(13, 152, 227);       
+  --bg-track: rgba(237, 236, 236, 1);        
+  --border-oval: rgba(232, 232, 236, 1);       
+  --bg-body: #ffffff; /* خلفية بيضاء نهاراً */
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color-hover: rgba(0, 0, 0, 0.15);
+  --bg-input-focus: #f8fafc;
+
+  /* ألوان النصوص نهاراً */
+  --text-title: #0f172a; /* كحلي داكن جداً قريب للأسود */
+  --text-body: #1d2130;  /* رمادي داكن للنصوص الصغبرة */          
+  --text-skill: #1e293b;      
+  --shape-opacity: 0.9;       
+  --btn:#ffffff;           
+}
+
+/* ================== 2. الوضع الداكن (Dark Mode) ================== */
+
+[data-theme='dark'] {
+  --primary-blue: rgb(13, 152, 227); /* يبقى ثابت أو يضيء قليلاً */
+  --bg-body: #0f172a; /* خلفية كحلية داكنة فخمة ليلاً */
+  --nav-bg: rgba(15, 23, 42, 0.85); /* خلفية الناف بار ليلاً */
+  --border-oval: rgba(255, 255, 255, 0.1);     
+  --bg-track: rgba(51, 65, 85, 1);  
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-color-hover: rgba(0, 0, 0, 0.6);
+  --bg-input-focus: #1e293b;
+
+  /* قلب ألوان النصوص لتصبح مضيئة ونظيفة في الظلام */
+  --text-title: #f8fafc; /* أبيض ناصع مريح للعين */                       
+  --text-body: #cbd5e1;  /* رمادي فاتح ملس للمقالات والوصف */                       
+  --text-skill: #e2e8f0;  
+  --btn: rgba(12, 150, 226, 0.6);
+;               
+  --shape-opacity: 0.3;
+}
+/* لتنقل الماوس بحركه انسيالبه بين اقسام موقغ */
+/* html {
+  scroll-behavior: smooth;
+} */
+
+/* مسافة امان لضمان ظهور عنوان كل قسم */
+/* section[id]{
+  scroll-margin-top: 30px;
+} */

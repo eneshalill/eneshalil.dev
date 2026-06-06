@@ -1,0 +1,249 @@
+.about-section {
+  width: 100%;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-wrapper {
+  width: 100%;
+  max-width: 1350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* الجزء الأيسر - الأيقونات */
+.about-left {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.about-left .oval {
+  position: absolute;
+  border: 1px solid var( --border-oval);
+  border-radius: 50%;
+  width: 400px; 
+  height: 280px;
+  top: 50%;
+  left: 42%;
+  
+}
+
+/* =======دوائر الايقونات======= */
+
+.orbit-1 {
+  transform: translate(-35%, -45%) rotate(50deg);
+}
+.orbit-2 {
+  transform: translate(-41%, -40%) rotate(50deg);
+}
+.orbit-3 {
+  transform: translate(-48%, -34%) rotate(50deg);
+}
+
+/* =======ايقونات======= */
+.html {
+  position: absolute;
+  color: rgba(228, 77, 38, 1);
+  font-size: 90px;
+  top: 26%;
+  left: 23%;
+}
+
+.cssLogo {
+position: absolute;
+  color: rgba(38, 77, 228, 1);
+
+  font-size: 90px;
+  top: 48%;
+  left: 40%;
+}
+
+.githubLogo {
+    position: absolute;
+  top: 58%;
+  left: 23%;
+ font-size: 84px;
+ color: var(--text-title);
+ transition:color 0.3s ease;
+}
+
+.reactLogo {
+      position: absolute;
+  top: 67%;
+  left: 56%;
+  color:   rgba(0, 216, 255, 1);
+  font-size:105px;
+}
+
+.figma-img {
+     position: absolute;
+  top: 40%;
+  left: 60%;
+  width: 84px;
+  height: 87px;
+}
+
+/* الجزء الأيمن - النصوص */
+.about-right {
+  flex: 1;
+  z-index: 2;
+}
+
+.about-tittle {
+  font-weight: 600;
+  font-size: 40px;
+  color: var( --text-title);
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-body);
+  width: 90%;
+  margin-bottom: 40px;
+}
+
+/* المهارات */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skill-item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-skill);
+}
+
+.progress-track {
+  width: 85%;
+  height: 11.6px;
+  background:var(--bg-track);
+
+  border-radius: 6px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-blue);
+  border-radius: 6px;
+  position: relative;
+  /* transition: width 1s ease-in-out; */
+}
+
+.progress-knob {
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  background: white;
+  border: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+}
+
+.skill-tooltip {
+  position: absolute;
+  top: -35px;
+  right: -15px;
+  background: var(--primary-blue);
+
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   📱 تنسيقات التجاوب لقسم الـ About (أقل من 992px و 768px)
+   ========================================================================== */
+
+/* 1. للشاشات المتوسطة (مثل التابلت والشاشات الصغيرة) */
+@media (max-width: 992px) {
+  .about-wrapper {
+    flex-direction: column; /* تحويل الترتيب من أفقي إلى عمودي */
+    gap: 60px;
+    padding: 0 40px;
+  }
+
+  .about-left {
+    width: 100%;
+    min-height: 350px; /* إعطاء مساحة كافية لحركة الأيقونات والدائرة */
+  }
+
+  .about-right {
+    width: 100%;
+    text-align: center; /* جعل النصوص في المنتصف لشكل أرتب في التابلت والموبايل */
+  }
+
+  .about-text {
+    width: 100%; /* جعل النص يأخذ العرض الكامل المتوفر */
+    margin: 0 auto 40px auto;
+  }
+
+  .progress-track {
+    width: 100%; /* جعل شريط المهارات يأخذ العرض الكامل */
+  }
+}
+
+/* 2. لشاشات الموبايل الصغيرة جداً (أقل من 768px) */
+@media (max-width: 768px) {
+  .about-section {
+    padding-top: 60px; /* تقليص المسافة العلوية لتناسب الهواتف */
+  }
+
+  .about-wrapper {
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .about-tittle {
+    font-size: 30px; /* تصغير حجم العنوان ليناسب شاشة الموبايل */
+  }
+
+
+  /* 🚨 السطر السحري: استهداف الحاوية الرئيسية للطرف الأيسر الذي يحتوي على الدوائر والأيقونات وإخفاؤها */
+  .about-left {
+    display: none !important;
+  }
+
+  /* تعديل الطرف الأيمن (النصوص) ليأخذ العرض الكامل وينتصف بشكل أرتب في الموبايل */
+  .about-wrapper {
+    flex-direction: column; /* تحويل الترتيب لعمودي */
+    padding: 0 24px;
+    gap: 30px;
+  }
+
+  .about-right {
+    width: 100%;
+    text-align: center; /* توسيط النصوص في الموبايل لشكل أجمل */
+  }
+
+  .about-tittle {
+    font-size: 32px; /* تصغير حجم العنوان ليناسب شاشة الهاتف */
+  }
+
+  .about-text {
+    width: 100%;
+    margin: 0 auto 30px auto;
+  }
+
+  .skills-list {
+    gap: 20px;
+  }
+
+}
