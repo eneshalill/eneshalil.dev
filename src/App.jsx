@@ -10,13 +10,13 @@ import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io";
 import { SiHtml5 } from "react-icons/si";
 import { RxGithubLogo } from "react-icons/rx";
 import Education from "./components/education/Education";
-import Call from "./components/call/call";
+import Call from "./components/call/Call";
 import Card from "./components/Card/Card";
 import Contact from "./components/Contact/Contact";
 import { IoCallOutline } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
-import Footer from "./components/footer/footer";
-import Header from "./components/header/header";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 import ScrollToTop from "./components/scrolltotop/ScrollToTop";
 import { FiMapPin } from "react-icons/fi";
 
