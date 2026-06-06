@@ -104,20 +104,27 @@
 /* ==========================================================================
    2. 📱 تنسيقات التجاوب لشاشات الموبايل (أقل من 768px)
    ========================================================================== */
+/* ==========================================================================
+   📱 كود التجاوب الموحد والنهائي لجميع أقسام الموقع (أقل من 768px)
+   ========================================================================== */
 
 @media (max-width: 768px) {
+
+  /* -----------------------------------------
+     1. 🌐 تنسيقات الناف بار والقائمة الشفافة
+     ----------------------------------------- */
   .nav-content {
-    padding: 0 24px; /* تصغير المسافات الجانبية لتناسب شاشات الهواتف */
+    padding: 0 24px; 
     position: relative;
   }
 
   .menu-icon {
     display: block; /* إظهار زر الثلاث أسطر */
+    z-index: 10001; 
   }
 
-  /* إخفاء زر الكمبيوتر وظهور زر الموبايل داخل المنيو */
   .desktop-theme {
-    display: none !important;
+    display: none !important; /* إخفاء زر ثيم الكمبيوتر */
   }
 
   .mobile-theme-item {
@@ -127,35 +134,142 @@
     margin-top: 15px;
   }
 
-  /* تحويل القائمة العادية إلى منسدلة بشكل عمودي */
+  /* الحاوية الشفافة المنسدلة */
   .nav-links-list {
     position: absolute;
-    top: 55px; /* ينسدل بدقة أسفل خط الناف بار الحقيقي */
+    top: 80px; 
     left: 0;
     width: 100%;
     flex-direction: column;
-    background-color: var(--bg-body);
-    backdrop-filter: blur(15px);
-    padding: 30px 0;
     gap: 20px;
-    border-bottom: 1px solid var(--border-oval, rgba(0,0,0,0.1));
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    z-index: -1;
+    padding: 30px 0;
+    z-index: 10000;
+
+    /* 🚨 تم وضعها none لمنع الفتح التلقائي الافتراضي */
+    display: none; 
+
+    /* تأثير الزجاج الشفاف الضبابي */
+    background-color: rgba(255, 255, 255, 0.45);  
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);                    
     
-    /* منع الحركة المخفية العشوائية وجعل الاعتماد كلياً على الفتح البرمجي */
-    display: none;
+    /* أنيميشن ناعم للتلاشي */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px); 
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
   }
 
-  /* كلاس الإظهار الإجباري المرتبط بالـ State عند الضغط */
+  /* كلاس الإظهار المرتبط بالـ State عند الضغط */
   .nav-links-list.active-menu {
-    display: flex !important;
+    display: flex !important; 
+    opacity: 1; 
+    visibility: visible;
+    transform: translateY(0); 
   }
 
   .nav-item {
     display: block;
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 18px;
+    font-weight: 600;
   }
-}
+
+  .nav-item:active {
+    background-color: rgba(12, 150, 226, 0.1); /* ومضة خفيفة عند النقر */             
+  }
+
+  /* الشفافية الخاصة بالوضع الليلي في الموبايل */
+  [data-theme='dark'] .nav-links-list {
+    background-color: rgba(15, 23, 42, 0.55);         
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+
+  /* -----------------------------------------
+     2. 👤 تنسيقات قسم من أنا (About Section)
+     ----------------------------------------- */
+  .about-left {
+    display: none !important; /* إخفاء الأيقونات والدوائر البيضاوية لتجنب تداخلها */
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 30px;
+  }
+
+  .about-right {
+    width: 100%;
+    text-align: center; /* توسيط النصوص */
+  }
+
+  .about-tittle {
+    font-size: 32px;
+  }
+
+  .about-text {
+    width: 100%;
+    margin: 0 auto 30px auto;
+  }
+
+
+  /* -----------------------------------------
+     3. 🎓 تنسيقات التايم لاين (Education & Experience)
+     ----------------------------------------- */
+  .experience-grid {
+    flex-direction: column !important; /* تحويل لعمود واحد */
+    padding: 0 30px !important; /* مسافة أمان جانبية للخط */
+  }
+
+  .experience-item {
+    width: 100% !important; /* ملء العرض بالكامل */
+    margin-bottom: 20px;
+  }
+
+  /* موازنة الخط المنقط والدائرة في حيز الرؤية */
+  .experience-item::before {
+    left: -10px; 
+    bottom: -40px;
+  }
+
+  .experience-item::after {
+    left: -15px; 
+  }
+
+  /* إلغاء امتداد خط آخر عنصر */
+  .experience-item:last-child::before {
+    display: none;
+  }
+
+
+  /* -----------------------------------------
+     4. ✉️ تنسيقات قسم التواصل (Contact Section)
+     ----------------------------------------- */
+  .main-content {
+    flex-direction: column !important; /* نزول الفورم أسفل الأيقونات */
+    gap: 35px;
+  }
+
+  .info-side {
+    flex: none;
+    width: 100% !important;
+  }
+
+  .form-row {
+    flex-direction: column !important; /* جعل حقول الإدخال فوق بعضها */
+    gap: 20px;
+  }
+
+  .contact-form button {
+    width: 100% !important; /* زر عريض مريح للضغط */
+  }
+
+} /* 👈 هذا القوس النهائي يغلق الميديا كويري بالكامل ويحمي الكود من الانهيار */
