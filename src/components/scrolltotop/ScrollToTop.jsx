@@ -1,5 +1,4 @@
-
-import "./scrollToTop.css";
+import "./scrolltotop.css";
 import { useState, useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import { LuArrowUp } from "react-icons/lu";
@@ -30,8 +29,11 @@ const ScrollToTop = () => {
   };
 
   return (
-    <div className={`scroll-to-top ${isVisible ? "show" : ""}`} onClick={scrollToTop}>
-      <LuArrowUp className="arrow-icon"/>
+    <div
+      className={`scroll-to-top ${isVisible ? "show" : ""}`}
+      onClick={scrollToTop}
+    >
+      <LuArrowUp className="arrow-icon" />
     </div>
   );
 };
