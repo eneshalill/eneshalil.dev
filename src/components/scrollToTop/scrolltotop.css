@@ -1,0 +1,39 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: #0c96e2; /* نفس اللون الأزرق الخاص بموقعك */
+  color: white;
+  border-radius: 12px; /* زوايا منحنية تشبه الصورة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(12, 150, 226, 0.3);
+  z-index: 1000; /* ليبقى فوق كل عناصر الموقع */
+  
+  /* تأثيرات الاختفاء والظهور الناعم */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(20px); /* يبدأ نازل قليلاً لأسفل */
+}
+
+/* الكلاس الذي ينشط عند النزول بالصفحة */
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* يصعد لمكانه الطبيعي بسلاسة */
+}
+
+/* تأثير عند تمرير الماوس فوق الزر (Hover) */
+.scroll-to-top:hover {
+  background-color: #0b84c7; /* لون أغمق قليلاً */
+  transform: scale(1.05); /* تكبير خفيف جداً */
+}
+
+.arrow-icon {
+  font-size: 20px;
+}
