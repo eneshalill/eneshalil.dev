@@ -11,14 +11,19 @@ const Card = ({ sites, Portfolio, work, Latest, Project, git }) => {
           <div className="text-group">
             <p className="portfolio-label">{Portfolio}</p>
             <h6 className="projects-title">
-              <span className="work"> {work}</span> {Latest}{" "}
+              <span className="work"> {work}</span> {Latest}
               <span className="blue-text">{Project}</span>
             </h6>
           </div>
 
-          <button className="github-btn">
-            {git} <span className="arrow">↗</span>
-          </button>
+         <a 
+  href="https://github.com/eneshalill" 
+  target="_blank" /* لفتح الرابط في تبويب جديد دون إغلاق موقعك */
+  rel="noopener noreferrer" /* خطوة أمان برمجية ضرورية عند استخدام target="_blank" */
+  className="github-btn"
+>
+  {git} <span className="arrow">↗</span>
+</a>
         </div>
 
         {/* قسم الكروت (Card سابقا) */}
@@ -42,16 +47,22 @@ const Card = ({ sites, Portfolio, work, Latest, Project, git }) => {
                       </div>
 
                       {/* أيقونة الرابط */}
-                      <div className="overlay-icon secondary">
-                        <svg width="40" height="40" viewBox="0 0 65 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M3.5179 38.8772C0.845122 29.2374 3.43467 18.5257 11.2866 10.9631C23.0023 -0.321024 41.9972 -0.321024 53.713 10.9631C65.4287 22.2472 65.4287 40.5423 53.713 51.8264C45.8611 59.389 34.7396 61.8831 24.7311 59.3088M41.5002 40.0634V22.7266M41.5002 22.7266H23.5002M41.5002 22.7266L11.4996 51.6212" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
+                    <a 
+  href={site.projectLink} 
+  target="_blank" /* لفتح موقع المشروع في تبويب جديد والحفاظ على بورتفوليوهات مفتوح */
+  rel="noopener noreferrer" /* حماية أمنية ضرورية للأداء والمتصفح */
+  className="overlay-icon secondary"
+  style={{ textDecoration: 'none' }} /* لضمان عدم تأثر الأيقونة بأي خطوط تحتها */
+>
+  <svg width="40" height="40" viewBox="0 0 65 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.5179 38.8772C0.845122 29.2374 3.43467 18.5257 11.2866 10.9631C23.0023 -0.321024 41.9972 -0.321024 53.713 10.9631C65.4287 22.2472 65.4287 40.5423 53.713 51.8264C45.8611 59.389 34.7396 61.8831 24.7311 59.3088M41.5002 40.0634V22.7266M41.5002 22.7266H23.5002M41.5002 22.7266L11.4996 51.6212" stroke="white" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+</a>
                     </div>
                   </div>
 
                   <div className="card-info">
-                    <h6 className="card-name">{site.Trippy}</h6>
+                    <h6 className="card-name">{site.name}</h6>
                     <p className="card-text">{site.tools}</p>
                     <div className="icon-card">
                       <svg className="svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">

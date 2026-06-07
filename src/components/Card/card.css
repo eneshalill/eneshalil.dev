@@ -34,7 +34,7 @@
   font-size: 40px;
   font-weight: 600;
   color: var(--text-title);
-    transition: color 0.3s ease;
+  transition: color 0.3s ease;
 
   line-height: 1.2;
   margin: 0;
@@ -60,7 +60,10 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition:background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  text-decoration: none;
 }
 
 .github-btn:hover {
@@ -162,7 +165,7 @@
 
 .card-info p {
   color: var(--text-body);
-    transition: color 0.3s ease;
+  transition: color 0.3s ease;
 
   font-size: 16px;
   font-weight: 400;
@@ -172,7 +175,7 @@
   position: absolute;
   bottom: 15px;
   right: 15px;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* ==========================================================================
@@ -185,24 +188,24 @@
   }
 
   .main-unified-container {
-    padding: 0 20px; 
+    padding: 0 20px;
   }
 
   .projects-container {
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
     gap: 25px;
     margin-bottom: 40px;
   }
 
   .projects-title {
-    font-size: 34px; 
+    font-size: 34px;
   }
 }
 
 @media (max-width: 768px) {
   .projects-container {
-    align-items: center;  
+    align-items: center;
     text-align: center;
     gap: 20px;
   }
@@ -213,42 +216,41 @@
   }
 
   .projects-title {
-    font-size: 28px; 
+    font-size: 28px;
   }
 
   .projects-title .work {
-    display: inline; 
+    display: inline;
   }
 
   .github-btn {
     width: 100%;
-    justify-content: center; 
+    justify-content: center;
     padding: 14px 20px;
     font-size: 15px;
   }
   .project-container {
-    grid-template-columns: 1fr;  
-    gap: 24px;  
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .card {
-    border-radius: 14px;  
+    border-radius: 14px;
   }
 
   .card-image-container {
-    height: 200px; 
+    height: 200px;
   }
 
   .card-info h6 {
-    font-size: 20px; 
+    font-size: 20px;
   }
 
   .card-info p {
-    font-size: 15px;  
+    font-size: 15px;
   }
 
-
   .card:hover {
-    transform: translateY(-4px); 
+    transform: translateY(-4px);
   }
 }
