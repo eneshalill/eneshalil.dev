@@ -4,6 +4,9 @@ import Hero from "./components/hero/Hero";
 import image from "../src/assets/images/enes.png";
 import figma from "../src/assets/images/figma.png";
 import image2 from "../src/assets/images/store.png";
+import trippy from "../src/assets/images/trippy.png"
+import calculator from "../src/assets/images/calculator.png"
+import portfolio from "../src/assets/images/portfolio.png"
 import About from "./components/about-me/About";
 import { BiLogoReact } from "react-icons/bi";
 import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io";
@@ -48,11 +51,10 @@ const App = () => {
   ]
 
 const sites=[
- { photo2 :image2, Trippy:"Trippy", tools:"Html-Css3-Vanilla javascript-React" },
- { photo2 :image2, Trippy:"store", tools:"Html-Css3-Vanilla javascript-React" },
- { photo2 :image2, Trippy:"calculator", tools:"Html-Css3-Vanilla javascript" },
- { photo2 :image2, Trippy:"calculator", tools:"Html-Css3-Vanilla javascript" },
- { photo2 :image2, Trippy:"calculator", tools:"Html-Css3-Vanilla javascript" },
+ { photo2 :image2, name:"a store", tools:"Html-Css3-Vanilla javascript-React", projectLink:"https://enes-mobilia.vercel.app/" },
+ { photo2 :trippy, name:"trippy", tools:"Html-Css3-Vanilla javascript-React",projectLink:"https://trippy-wine.vercel.app/" },
+ { photo2 :calculator, name:"calculator", tools:"Html-Css3-Vanilla javascript",projectLink:"https://calculator-cbe2.vercel.app/ " },
+ { photo2 :portfolio, name:"portfolio", tools:"Html-Css3-Vanilla javascript",projectLink:"https://anas-cv-1323e.web.app/" },
 ]
 
 const infos=[
