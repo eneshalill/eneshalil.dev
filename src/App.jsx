@@ -44,17 +44,17 @@ const App = () => {
   ]
 
   const experiences=[
-    {address:"Education", explain:"Bachelor's degree in Information Technology Engineering,Aljazeera Private University ."},
+    {address:"Education", explain:"Bachelor's degree in Information Technology Engineering, Aljazeera Private University ."},
     {address:"Frontend Intern at Vica Company", explain:"Worked on real-world projects using React and API integration."},
     {address:"Ul Developer Intern at Company", explain:"Converted Figma designs into fully functional and responsive interfaces."},
     {address:"Frontend Developer-freelance", explain:"Developed multiple websites using HTML, CSS, JavaScript, and React."},
   ]
 
 const sites=[
- { photo2 :image2, name:"a store", tools:"Html-Css3-Vanilla javascript-React", projectLink:"https://enes-mobilia.vercel.app/" },
- { photo2 :trippy, name:"trippy", tools:"Html-Css3-Vanilla javascript-React",projectLink:"https://trippy-wine.vercel.app/" },
- { photo2 :calculator, name:"calculator", tools:"Html-Css3-Vanilla javascript",projectLink:"https://calculator-cbe2.vercel.app/ " },
- { photo2 :portfolio, name:"portfolio", tools:"Html-Css3-Vanilla javascript",projectLink:"https://anas-cv-1323e.web.app/" },
+ { photo2 :image2, name:"a store", tools:"Html-Css3-Vanilla javascript-React", projectImg:image2, projectLink:"https://enes-mobilia.vercel.app/" },
+ { photo2 :trippy, name:"trippy", tools:"Html-Css3-Vanilla javascript-React", projectImg:trippy, projectLink:"https://trippy-wine.vercel.app/" },
+ { photo2 :calculator, name:"calculator", tools:"Html-Css3-Vanilla javascript", projectImg:calculator, projectLink:"https://calculator-cbe2.vercel.app/ " },
+ { photo2 :portfolio, name:"portfolio", tools:"Html-Css3-Vanilla javascript", projectImg:portfolio, projectLink:"https://anas-cv-1323e.web.app/" },
 ]
 
 const infos=[
@@ -85,7 +85,7 @@ const infos=[
       <Education experiences={experiences}/>
       <Call title1="Try me out, risk free!" desctiption="If you're not happy with the design after the first draft, I'll refund your deposit , " insurance="no questions asked" btn="Contact →"/>
  
-    <Card sites={sites} Portfolio="Portfolio" work="My Creative Works" Latest="Latest" Project="Projects"
+    <Card sites={sites} Portfolio="Portfolio" work="My Creative Works" Latest="Latest" Project= " Projects"
     git="View Github "/>
     <Contact contact="Contact" talk="Let's Discuss Your" project="Project" infos={infos} message="Send Message"/>
     </main>
