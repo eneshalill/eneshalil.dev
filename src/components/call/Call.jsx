@@ -1,5 +1,14 @@
 import "./call.css";
 const Call = ({ title1, desctiption, insurance, btn }) => {
+  
+  // كل هلدوخة مشان ينط لقسم الفورم
+  const handleScroll = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="cta">
       <div className="cta-waves">
@@ -41,7 +50,7 @@ const Call = ({ title1, desctiption, insurance, btn }) => {
             <strong>{insurance}</strong>
           </p>
         </div>
-        <button className="cta-btn">{btn}</button>
+        <button className="cta-btn" onClick={handleScroll}>{btn}</button>
       </div>
     </section>
   );

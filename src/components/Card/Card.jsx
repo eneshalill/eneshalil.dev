@@ -1,4 +1,5 @@
 import "./card.css";
+import { Link } from "react-router-dom"; 
 
 const Card = ({ sites, Portfolio, work, Latest, Project, git }) => {
   return (
@@ -72,11 +73,15 @@ const Card = ({ sites, Portfolio, work, Latest, Project, git }) => {
                   <div className="card-info">
                     <h6 className="card-name">{site.name}</h6>
                     <p className="card-text">{site.tools}</p>
-                    <div className="icon-card">
-                      <svg className="svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.0937 23.5317C0.534583 17.6934 2.04515 11.2059 6.62542 6.62563C13.4596 -0.208544 24.54 -0.208544 31.3742 6.62563C38.2083 13.4598 38.2083 24.5402 31.3742 31.3744C26.7939 35.9546 20.3064 37.4652 14.4681 35.9061M24.25 24.2502V13.7502M24.25 13.7502H13.75M24.25 13.7502L6.7497 31.2501" stroke="#0C96E2" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
+
+<div className="icon-card">
+  {/* 🚨 عند الضغط هنا، سينتقل المتصفح لصفحة تفاصيل هذا المشروع المحدّد بناءً على الـ id */}
+  <Link to={`/details/${site.id}`} className="svg-icon-link">
+    <svg className="svg-icon" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.0937 23.5317C0.534583 17.6934 2.04515 11.2059 6.62542 6.62563C13.4596 -0.208544 24.54 -0.208544 31.3742 6.62563C38.2083 13.4598 38.2083 24.5402 31.3742 31.3744C26.7939 35.9546 20.3064 37.4652 14.4681 35.9061M24.25 24.2502V13.7502M24.25 13.7502H13.75M24.25 13.7502L6.7497 31.2501" stroke="#0C96E2" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </Link>
+</div>
                   </div>
                 </div>
               </div>

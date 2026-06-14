@@ -1,0 +1,435 @@
+.details-flex-container {
+  display: flex;
+  width: 100%;
+  max-width: 1450px;
+  min-height: 90vh; /* ارتفاع متناسق يضمن امتداد العناصر عمودياً */
+  align-items: stretch; /* ⬅️ جعل الصورة والنص يمتدان كالمسطرة بنفس الارتفاع تماماً */
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+/* الطرف الأيسر: حاوية الصورة */
+.details-img-container {
+  flex: 1; /* تقسيم العرض بالتساوي 50% */
+  overflow: hidden;
+  display: flex;
+padding-left: 100px;
+
+}
+
+/* ضبط الصورة لتملأ كامل الارتفاع والعرض المتاح بدون تشويه */
+.details-project-img {
+  width: 100%;
+  height: 100%; /* ⬅️ ممتدة من الأعلى والأسفل */
+  object-fit: contain; /* لقص أبعاد الصورة ديناميكياً داخل الحاوية */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* الطرف الأيمن: حاوية المعلومات والزر */
+.details-text-container {
+  flex: 0.8; /* تقسيم العرض بالتساوي 50% */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* تمليط العناصر والنصوص في المنتصف عمودياً */
+  padding: 35px 50px; /* مسافة داخلية مريحة تعطي طابع الفيجما الفخم */
+  background-color: var(--bg-secondary); /* يمكنك تعديل متغير الخلفية ليتناسب مع الثيم */
+}
+
+/* حاوية العنوان والأيقونة لجعلهما في سطر واحد */
+.details-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* ضبط حجم وحركة أيقونة الرابط الخارجية */
+.project-live-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* تأثير تدوير السهم الفخم عند الهوفر المطابق لباقي أجزاء موقعك */
+.project-live-link-icon:hover {
+  transform: rotate(45deg) scale(1.05);
+}
+
+/* تصفير المارجن القديم للعنوان ليعمل الـ Flexbox بشكل صحيح */
+.details-title {
+  margin: 0 !important;
+}
+
+
+/* تنسيقات النصوص الداخلية */
+.details-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-title, #ffffff);
+  margin: 0 0 10px 0;
+}
+
+.details-date {
+  font-size: 14px;
+  color: var(--text-title);
+  opacity: 0.6;
+  margin-bottom: 17px;
+}
+
+.details-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-title);
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+
+/* أسطر اللغات والمكتبات المستعملة */
+.tech-info-line {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: var(--text-title);
+}
+
+.tech-info-line strong {
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.tech-info-line span {
+  opacity: 0.7;
+  margin-left: 5px;
+  
+}
+
+/*  Github Repo الأزرق الموحد */
+.github-repo-btn {
+  background-color: #0c96e2; /* نفس الدرجة المستخرجة من لقطة التصميم */
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.github-repo-btn:hover {
+  background-color: #0a84c9;
+  transform: translateY(-1px);
+}
+
+
+.divider1 {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  margin-left: 80px;
+  max-width: 1350px;
+  width: 100%;
+  border-top: 2px dashed var(--text-skill);
+  z-index: 0;
+  bottom: 80px;
+}
+
+.divider1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 19px;
+  height: 19px;
+  border: 2px solid var(--text-skill);
+  border-radius: 50%;
+  background: white;
+}
+.divider1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--text-skill);
+  border-radius: 50%;
+  background: white;
+  z-index: 3;
+}
+
+.divider1 .center-dot2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 4px;
+  height: 4px;
+  background: var(--text-skill);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+
+/* ==========================================================================
+   👥 هيدر قسم السلايدر السفلي (The Best Projects)
+   ========================================================================== */
+.bottom-section-header {
+  max-width: 1400px;
+  width: 100%;
+  margin: 40px auto 0 auto; /* مسافة متناسقة تفصل القسم السفلي عن العلوي */
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.portfolio-sub {
+  color: #0c96e2;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.portfolio-main-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-title, #ffffff);
+  margin: 0;
+}
+
+.portfolio-main-title span {
+  color: #0c96e2;
+}
+
+/* حاوية أزرار الأسهم الدائرية للتنقل */
+.slider-arrows-container {
+  display: flex;
+  gap: 12px;
+}
+
+.slider-arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #0c96e2; /* توحيد اللون المعتمد من الفيجما */
+  background-color: transparent;
+  color: var(--text-title, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-arrow-btn:hover {
+  transform: scale(1.05);
+  background-color: #0c96e2;
+  color: #ffffff;
+}/* ==========================================================================
+   📦 الحاوية الحقيقية والمستقلة للـ Slider الأفقي المتطابق
+   ========================================================================== */
+.horizontal-slider-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto 80px auto; 
+  padding: 0 40px;
+  box-sizing: border-box;
+  overflow-x: auto; 
+  scroll-behavior: smooth;
+}
+
+/* إخفاء السكرول بار للمحافظة على نظافة التصميم */
+.horizontal-slider-wrapper::-webkit-scrollbar {
+  display: none;
+}/* ==========================================================================
+   📦 الحاوية الحقيقية والمستقلة للـ Slider الأفقي المتطابق بالكامل
+   ========================================================================== */
+.horizontal-slider-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto 80px auto; 
+  padding: 0 40px;
+  box-sizing: border-box;
+  overflow-x: auto; 
+  scroll-behavior: smooth;
+   -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+/* إخفاء السكرول بار للمحافظة على نظافة التصميم */
+.horizontal-slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* الصف الحامل للكروت */
+.pure-slider-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 30px; /* نفس مسافة الهيدر البينية الفخمة */
+  width: max-content; 
+  padding: 15px 0;
+}
+
+.pure-project-card {
+  flex-shrink: 0;
+  width: 400px; /* العرض المثالي الفخم المعتمد للكروت */
+}
+
+.pure-project-card .card {
+  background: var(--bg-body, #0f172a);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 10px 20px var(--shadow-color, rgba(0,0,0,0.15));
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pure-project-card .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--shadow-color-hover, rgba(0,0,0,0.3));
+}
+
+/* حاوية الصورة وتأثير الزووم */
+.pure-project-card .card-image-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.pure-project-card .card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pure-project-card .card:hover .card-image-container img {
+  transform: scale(1.05); /* زووم خفيف للصورة عند الهوفر */
+}
+
+/* الـ Overlay الفخم مع الـ Blur والمطابق للرئيسية */
+.pure-project-card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  backdrop-filter: blur(2px);
+}
+
+.pure-project-card .card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* أيقونات الهوفر داخل الـ Overlay */
+.pure-project-card .overlay-icon {
+  width: 55px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(20px);
+}
+
+.pure-project-card .card:hover .overlay-icon {
+  transform: translateY(0);
+}
+
+.pure-project-card .overlay-icon:hover {
+  background: #0c96e2;
+  border-color: #0c96e2;
+}
+
+/* معلومات المحتوى السفلية داخل الكرت */
+.pure-project-card .card-info {
+  position: relative;
+  padding: 20px 15px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(  --bg-body, #e7eaf0);
+}
+
+.pure-project-card .card-text-side {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pure-project-card .card-info h6.card-name {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-title, #e31616);
+}
+
+.pure-project-card .card-info p.card-text {
+  margin: 0;
+  color: var(--text-body, #94a3b8);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* مكان الأيقونة الزرقاء الدائرية */
+.pure-project-card .icon-card {
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.pure-project-card .svg-icon {
+  transition: transform 0.3s ease;
+}
+
+.pure-project-card .svg-icon-link:hover .svg-icon {
+  transform: rotate(45deg); /* تدوير ممتع للسهم عند التمرير */
+}
+
+/* ==========================================================================
+   📱 حماية كاملة وتجاوب على الشاشات الصغيرة والموبايل
+   ========================================================================== */
+@media (max-width: 768px) {
+  .pure-project-card {
+    width: 300px; /* مقاس ذكي جداً يمنع انكسار الكروت على الهواتف */
+  }
+  .pure-project-card .card-image-container {
+    height: 190px;
+  }
+  .pure-project-card .card-info h6.card-name {
+    font-size: 19px;
+  }
+}

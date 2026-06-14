@@ -11,7 +11,7 @@ const Contact = ({ contact, talk, project, infos, message }) => {
         </div>
 
         <div className="main-content">
-          {/* هذا الـ div هو السر.. يجمع كل الأيقونات لتصطف عمودياً */}
+
           <div className="info-side">
             {infos?.map((info, index) => (
               <div className="item" key={index}>

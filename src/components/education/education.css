@@ -99,12 +99,62 @@
     color: var(--text-title);
   transition: color 0.3s ease;
 }
+
+.shape {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.9;
+}
+.circle-top {
+  top: 30%;
+  right: 11%;
+  width: 17px;
+  height: 17px;
+  background-color: rgba(123, 85, 236, 1);
+  border-radius: 50%;
+}
+
+.circle-bottom {
+  bottom: 15%;
+  left: 3%;
+  width: 25px;
+  height: 25px;
+  background-color: #3498db;
+  border-radius: 50%;
+}
+.square-right {
+  top: 45%;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(125, 224, 234, 1);
+  border-radius: 12px;
+  transform: rotate(25deg); /* إمالة المربع */
+}
+
+.square-bottom {
+  bottom: -7%;
+  left: 7%;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(125, 224, 234, 1);
+  border-radius: 10px;
+  transform: rotate(-15deg);
+}
+
+.circle-right {
+  bottom: 30%;
+  right: 2%;
+  width: 25px;
+  height: 25px;
+  background-color: #3498db;
+  border-radius: 50%;
+}
 /* ==========================================================================
-   📱 تنسيقات التجاوب لقسم التعليم والخبرة (Education & Experience)
+   تنسيقات التجاوب لقسم التعليم والخبرة (Education & Experience)
    ========================================================================== */
 
 @media (max-width: 768px) {
-  /* تقليص المسافات العلوية لتناسب الشاشات الصغيرة */
   .section-title {
     margin-top: 50px;
     margin-bottom: 35px;
@@ -114,14 +164,12 @@
     font-size: 30px; /* تصغير العنوان الرئيسي */
   }
 
-  /* ضبط الحاوية الأم في الموبايل لتوفير مساحة آمنة للخط المنقط */
   .experience-grid {
     flex-direction: column;
     padding: 0 35px; /* ترك مسافة جانبية 35 بكسل يساراً ليظهر التايم لاين بوضوح */
     gap: 30px;
   }
 
-  /* جعل العنصر يأخذ العرض الكامل بشكل عمودي */
   .experience-item {
     width: 100%;
     margin-bottom: 10px;
@@ -129,17 +177,17 @@
   }
 
   .experience-item h5 {
-    font-size: 20px; /* تصغير حجم عنوان الخبرة ليناسب الجوال */
+    font-size: 20px; 
   }
 
-  /* 🛠️ إعادة تموضع الخط المنقط بدقة داخل حيز الرؤية */
+  /*  إعادة تموضع الخط المنقط بدقة داخل حيز الرؤية */
   .experience-item::before {
     left: -15px; /* إزاحته للداخل قليلاً لكي لا يخرج عن الحافة */
     top: 25px;
     bottom: -45px;
   }
 
-  /* 🛠️ إعادة تموضع الدائرة الزرقاء لتظل في منتصف الخط المنقط */
+  /*  إعادة تموضع الدائرة الزرقاء لتظل في منتصف الخط المنقط */
   .experience-item::after {
     left: -21px; /* موازنتها بالملي لتتطابق فوق الخط المنقط تماماً */
     top: 17px;
@@ -153,7 +201,7 @@
 
 
   /* ==========================================
-     🔮 التحكم في الأشكال الهندسية الخلفية 
+     التحكم في الأشكال الهندسية الخلفية 
      ========================================== */
   /* إخفاء الأشكال التي قد تتداخل مع النصوص وتشوه القراءة */
   .square-right, 
@@ -182,4 +230,7 @@
     width: 15px;
     height: 15px;
   }
+}
+.shape{
+  display: none;
 }

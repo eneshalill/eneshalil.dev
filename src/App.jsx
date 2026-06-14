@@ -23,6 +23,11 @@ import Header from "./components/header/Header";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import { FiMapPin } from "react-icons/fi";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+
+// استيراد صفحة التفاصيل الجديدة من مجلدها الفرعي
+import ProjectDetails from "./components/ProjectDetails/ProjectDetails"; 
+
 const App = () => {
   const items = [
     { id:"home", content: "Home" },
@@ -33,14 +38,13 @@ const App = () => {
   ];
 
   const skills=[
-  {name:"HTML5" ,value:90},
-  {name:"CSS3" ,value:85},
-  {name:"Bootstrap" ,value:80},
-  {name:"Javascript" ,value:95},
-  {name:"React" ,value:90},
-  {name:"Tailwind Css" ,value:100},
-  {name:"Next.js" ,value:90},
-  
+    {name:"HTML5" ,value:90},
+    {name:"CSS3" ,value:85},
+    {name:"Bootstrap" ,value:80},
+    {name:"Javascript" ,value:95},
+    {name:"React" ,value:90},
+    {name:"Tailwind Css" ,value:100},
+    {name:"Next.js" ,value:90},
   ]
 
   const experiences=[
@@ -50,48 +54,68 @@ const App = () => {
     {address:"Frontend Developer-freelance", explain:"Developed multiple websites using HTML, CSS, JavaScript, and React."},
   ]
 
-const sites=[
- { photo2 :image2, name:"a store", tools:"Html-Css3-Vanilla javascript-React", projectImg:image2, projectLink:"https://enes-mobilia.vercel.app/" },
- { photo2 :trippy, name:"trippy", tools:"Html-Css3-Vanilla javascript-React", projectImg:trippy, projectLink:"https://trippy-wine.vercel.app/" },
- { photo2 :calculator, name:"calculator", tools:"Html-Css3-Vanilla javascript", projectImg:calculator, projectLink:"https://calculator-cbe2.vercel.app/ " },
- { photo2 :portfolio, name:"portfolio", tools:"Html-Css3-Vanilla javascript", projectImg:portfolio, projectLink:"https://anas-cv-1323e.web.app/" },
-]
+  const sites=[
+    { id: 1, photo2 :image2, name:"a store", tools:"Html-Css3-Vanilla javascript-React", projectImg:image2, projectLink:"https://enes-mobilia.vercel.app/", github:"https://github.com/eneshalill/Maltimart-ecommerce-.git"},
+    { id: 2, photo2 :trippy, name:"trippy", tools:"Html-Css3-Vanilla javascript-React", projectImg:trippy, projectLink:"https://trippy-wine.vercel.app/", github:"https://github.com/eneshalill/trippy.git"},
+    { id: 3, photo2 :calculator, name:"calculator", tools:"Html-Css3-Vanilla javascript", projectImg:calculator, projectLink:"https://calculator-cbe2.vercel.app/ " , github:"https://github.com/eneshalill/calculator.git"},
+    { id: 4, photo2 :portfolio, name:"portfolio", tools:"Html-Css3-Vanilla javascript", projectImg:portfolio, projectLink:"https://anas-cv-1323e.web.app/" , github:"https://github.com/eneshalill/eneshalil.dev.git"},
+  ]
 
-const infos=[
-  {icon:<IoCallOutline />, title:"Call me", content:"+905396489745" },
-  {icon:<HiOutlineMail />, title:"Email me", content:"thoth.na.anass@gmail.com" },
-  {icon:<FiMapPin />, title:"Address", content:"Turkey, Istanbul" },
-]
+  const infos=[
+    {icon:<IoCallOutline />, title:"Call me", content:"+905396489745" },
+    {icon:<HiOutlineMail />, title:"Email me", content:"thoth.na.anass@gmail.com" },
+    {icon:<FiMapPin />, title:"Address", content:"Turkey, Istanbul" },
+  ]
+
   return (
-    <>
-    <Header> 
-      <NavBar logo="Enes" items={items} />
-      <Hero
-        greeting="HEY! " 
-        name="I'm Enes, "
-        tittle="Frontend Developer"
-        text=" 
-        Agency-quality webflow websites with the personal touch of a freelancer."
-        btn="Download Cv"
-        photo={image}
-        
-      />
-      </Header>
-<main> 
-      <About tittle="About me" text="Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra"
-       skills={skills} html={<IoLogoHtml5 />} htmlIcon={<SiHtml5 />} cssIcon={<IoLogoCss3 />} reactIcon={<BiLogoReact />}
-      photo1={figma}
-      githubIcon={<RxGithubLogo />}/>
-      <Education experiences={experiences}/>
-      <Call title1="Try me out, risk free!" desctiption="If you're not happy with the design after the first draft, I'll refund your deposit , " insurance="no questions asked" btn="Contact →"/>
- 
-    <Card sites={sites} Portfolio="Portfolio" work="My Creative Works" Latest="Latest" Project= " Projects"
-    git="View Github "/>
-    <Contact contact="Contact" talk="Let's Discuss Your" project="Project" infos={infos} message="Send Message"/>
-    </main>
-    <Footer />
-    <ScrollToTop/>
-    </>
+    <Router>
+      <Routes>
+        {/* 🏠 1. المسار الرئيسي للموقع */}
+        <Route path="/" element={
+          <>
+            <Header> 
+              <NavBar logo="Enes" items={items} />
+              <Hero
+                greeting="HEY! " 
+                name="I'm Enes, "
+                tittle="Frontend Developer"
+                text="Agency-quality webflow websites with the personal touch of a freelancer."
+                btn="Download Cv"
+                photo={image}
+              />
+            </Header>
+            <main> 
+              <About tittle="About me" text="Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra"
+                skills={skills} html={<IoLogoHtml5 />} htmlIcon={<SiHtml5 />} cssIcon={<IoLogoCss3 />} reactIcon={<BiLogoReact />}
+                photo1={figma}
+                githubIcon={<RxGithubLogo />}
+              />
+              <Education experiences={experiences}/>
+              <Call title1="Try me out, risk free!" desctiption="If you're not happy with the design after the first draft, I'll refund your deposit , " insurance="no questions asked" btn="Contact →"/>
+         
+              <Card sites={sites} Portfolio="Portfolio" work="My Creative Works" Latest="Latest" Project= " Projects" git="View Github "/>
+              <Contact contact="Contact" talk="Let's Discuss Your" project="Project" infos={infos} message="Send Message"/>
+            </main>
+            <Footer />
+            <ScrollToTop/>
+          </>
+        }/>
+
+        {/* 🚨 2. مسار صفحة التفاصيل المخصصة بعد التعديل والتمرير الدقيق للـ items */}
+        <Route path="/details/:id" element={
+          <ProjectDetails 
+            sites={sites} 
+            items={items} /* 👈 قمنا بتمرير مصفوفة الـ items هنا ليعمل الناف بار بشكل صحيح داخل صفحة التفاصيل */
+            Portfolio="Portfolio" 
+            work="My Creative Works" 
+            Latest="Latest" 
+            Project="Projects" 
+            git="View Github " 
+          />
+        } />
+      </Routes>
+    </Router>
   );
 };
+
 export default App;
