@@ -97,8 +97,8 @@
   border-radius: 8px;
   margin-top: 30px;
 
-background-color:var(--btn);
-    color:var(--text-title);
+  background-color: var(--btn);
+  color: var(--text-title);
   font-weight: 600;
   font-size: 15px;
   line-height: 24px;
@@ -141,7 +141,7 @@ background-color:var(--btn);
   position: absolute;
   width: 430px;
   height: 410px;
-  background: #DFE1FA;
+  background: #dfe1fa;
   border-radius: 50%;
   top: 50px;
   left: 140px;
@@ -262,7 +262,6 @@ background-color:var(--btn);
 ========================== */
 
 @media (max-width: 992px) {
-
   .hero-section {
     flex-direction: column-reverse;
     justify-content: center;
@@ -322,13 +321,11 @@ background-color:var(--btn);
   }
 }
 
-
 /* ==========================
    Mobile
 ========================== */
 
 @media (max-width: 768px) {
-
   .hero-section {
     padding: 110px 20px 60px;
     gap: 30px;
@@ -375,7 +372,40 @@ background-color:var(--btn);
   .dot4 {
     transform: scale(0.8);
   }
+  .dot2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-blue);
+    top: 5%;
+    left: 5%;
+    z-index: 3;
+    border-radius: 12px;
+    transform: rotate(25deg);
+  }
+  .dot3 {
+    position: absolute;
+    width: 12.3px;
+    height: 12px;
+    background: rgba(88, 63, 188, 1);
 
+    top: 16%;
+    right: 82%;
+    z-index: 3;
+    border-radius: 12px;
+    transform: rotate(-30deg);
+  }
+  .square {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #d798e1;
+    top: 30%;
+    left: 9%;
+    z-index: 3;
+    border-radius: 12px;
+    transform: rotate(-30deg);
+  }
   .hero-section .curve,
   .hero-section .curve1 {
     display: none;
@@ -393,13 +423,11 @@ background-color:var(--btn);
   }
 }
 
-
 /* ==========================
    Small Mobile
 ========================== */
 
 @media (max-width: 480px) {
-
   .hero-section {
     padding: 100px 15px 50px;
   }
@@ -438,5 +466,28 @@ background-color:var(--btn);
 
   .dot2 {
     left: 82%;
+  }
+
+  .dot2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-blue);
+    top: 7%;
+    left: 15%;
+    z-index: 3;
+    border-radius: 12px;
+    transform: rotate(25deg);
+  }
+  .square {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #d798e1;
+    top: 20%;
+    left: 7%;
+    z-index: 3;
+    border-radius: 12px;
+    transform: rotate(-30deg);
   }
 }

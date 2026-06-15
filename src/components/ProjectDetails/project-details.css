@@ -1,39 +1,47 @@
 .details-flex-container {
   display: flex;
+  justify-content: space-between;
   width: 100%;
-  max-width: 1450px;
+  max-width: 1200px;
   min-height: 90vh; /* ارتفاع متناسق يضمن امتداد العناصر عمودياً */
   align-items: stretch; /* ⬅️ جعل الصورة والنص يمتدان كالمسطرة بنفس الارتفاع تماماً */
-  margin-top: 50px;
-  box-sizing: border-box;
+  margin:0 auto;
+  padding: 60px 20px;
+  gap: 50px;
+  margin-top: 30px;
 }
 
 /* الطرف الأيسر: حاوية الصورة */
-.details-img-container {
-  flex: 1;                                       /* تقسيم العرض بالتساوي 50% */
+.details-flex-container {
+  width: 100%;
+  padding: 60px 0; /* بادينج علوي وسفلي فقط لترك المساحة الجانبية للمسطرة */
   display: flex;
-  padding-left: 100px;
-  overflow: hidden;
-  border-radius: 16px;
-
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-/* ضبط الصورة لتملأ كامل الارتفاع والعرض المتاح بدون تشويه */
+/* حاوية الصورة (الطرف الأيسر) */
+.details-img-container {
+  flex: 1.1;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  aspect-ratio: 16/10;
+}
+
+/* عنصر الصورة نفسه */
 .details-project-img {
   width: 100%;
-  height: 100%;                               /* ممتدة من الأعلى والأسفل */
-  object-fit: contain;                        /* لقص أبعاد الصورة ديناميكياً داخل الحاوية */
-display: block;
+  height: 100%;
+  object-fit: fill; /* هنا جعلناها كفر لتملأ الزوايا وتلف إجبارياً على الشاشات الكبيرة والصغيرة */
 }
 
-/* الطرف الأيمن: حاوية المعلومات والزر */
+/* حاوية النصوص والمعلومات (الطرف الأيمن) */
 .details-text-container {
-  flex: 0.8; /* تقسيم العرض بالتساوي 50% */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* تمليط العناصر والنصوص في المنتصف عمودياً */
-  padding: 35px 50px; /* مسافة داخلية مريحة تعطي طابع الفيجما الفخم */
-  background-color: var(--bg-secondary); /* يمكنك تعديل متغير الخلفية ليتناسب مع الثيم */
+  flex: 0.9;
+  width: 100%;
 }
 
 /* حاوية العنوان والأيقونة لجعلهما في سطر واحد */
@@ -130,7 +138,6 @@ display: block;
   background-color: #0a84c9;
   transform: translateY(-1px);
 }
-
 
 .divider1 {
   position: absolute;
@@ -423,108 +430,43 @@ display: block;
 .pure-project-card .svg-icon-link:hover .svg-icon {
   transform: rotate(45deg); /* تدوير ممتع للسهم عند التمرير */
 }
-
-//* ==========================================================================
-   📱 حماية كاملة وتجاوب شامل على الشاشات الصغيرة والموبايل (768px فما دون)
-   ========================================================================== */
 @media (max-width: 768px) {
   
-  /* 1️⃣ تعديل حاوية تفاصيل المشروع العلوية لتصبح عمودية */
   .details-flex-container {
     flex-direction: column;
-    min-height: auto;
-    margin-top: 20px;
-    padding: 0 20px;
+    padding: 30px 20px; /* تقليل البادينج ليناسب الشاشات الصغيرة */
     gap: 30px;
   }
 
-  /* إلغاء البادينج الأيسر الكبير للصورة وجعلها تأخذ العرض الكامل */
   .details-img-container {
-    padding-left: 0 !important;
-    width: 100%;
-    order: 1; /* يضمن ظهور الصورة في الأعلى يليه النص */
+    height: 250px; /* الارتفاع المناسب جداً لشاشة الهاتف */
+    border-radius: 16px;
   }
 
   .details-project-img {
-    height: 250px; /* تحديد ارتفاع مناسب متناسق للصورة على الموبايل */
-    object-fit: cover; /* لملء الحاوية بنظافة */
+    object-fit: cover;
   }
 
-  /* ضبط حاوية النصوص لتأخذ العرض الكامل وتوسيع المسافات */
-  .details-text-container {
-    width: 100%;
-    padding: 20px 10px !important;
-    order: 2;
-  }
-
-  /* تصغير أحجام العناوين والنصوص لتناسب الهواتف */
   .details-title {
-    font-size: 26px; /* تصغير حجم عنوان المشروع */
-  }
-
-  .details-description {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  .tech-info-line {
-    font-size: 14px;
-  }
-
-  /* جعل زر الجيت هاب يأخذ العرض الكامل على الجوال لسهولة الضغط */
-  .github-repo-btn {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 14px;
-    margin-top: 20px;
-  }
-
-  /* إخفاء الخطوط المتقطعة الخلفية (الديزاين) التي قد تشوه مظهر الجوال */
-  .divider1 {
-    display: none !important;
-  }
-
-  /* 2️⃣ ضبط هيدر السلايدر السفلي (The Best Projects) */
-  .bottom-section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 0 20px;
-    margin-top: 50px;
-  }
-
-  .portfolio-main-title {
     font-size: 24px;
+    margin-bottom: 10px;
   }
 
-  /* 3️⃣ ضبط السلايدر الأفقي والكروت السفلي */
   .horizontal-slider-wrapper {
-    margin: 20px auto 40px auto;
-    padding: 0 20px;
-  }
-
-  .pure-slider-row {
-    gap: 20px;
+    padding: 10px 20px;
+    overflow-x: auto; /* يسمح بالتمرير باللمس على الجوال */
   }
 
   .pure-project-card {
-    width: 290px; /* مقاس ذكي جداً ومجرب يمنع انكسار الكروت على جميع الهواتف */
+    min-width: 280px; /* يمنع انكماش الكروت ويجعل التصفح رائعاً */
+    margin-right: 15px;
   }
-
-  .pure-project-card .card-image-container {
-    height: 180px;
-  }
-
-  .pure-project-card .card-info {
-    padding: 15px 12px;
-  }
-
-  .pure-project-card .card-info h6.card-name {
-    font-size: 18px;
-  }
-
-  .pure-project-card .card-text {
-    font-size: 14px;
-  }
+  
+.divider1{
+  display: none;
+}
+.bottom-section-header{
+  margin: 0 auto;
+  gap: 45px;
+}
 }
