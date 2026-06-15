@@ -4,7 +4,7 @@ import NavBar from "../navBar/NavBar";
 import Footer from "../footer/Footer";
 import "./project-details.css";
 
-const ProjectDetails = ({ sites, items, Portfolio, work, Latest, Project }) => {
+const ProjectDetails = ({ sites, items, Portfolio,}) => {
   const { id } = useParams();
   const sliderRef = useRef(null);
 
@@ -63,7 +63,7 @@ const ProjectDetails = ({ sites, items, Portfolio, work, Latest, Project }) => {
             <div className="details-title-wrapper">
   <h2 className="details-title">{currentProject.name}</h2>
   
-  {/* 🎯 أيقونة السهم الدائري الموجهة لرابط الموقع مباشرة */}
+  {/*  أيقونة السهم الدائري الموجهة لرابط الموقع مباشرة */}
   <a 
     href={currentProject.projectLink} 
     target="_blank" 
@@ -79,9 +79,7 @@ const ProjectDetails = ({ sites, items, Portfolio, work, Latest, Project }) => {
             <div className="details-date">12-5-2024</div>
 
             <p className="details-description">
-              Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa
-              nibh lectus netus in. Aliquet donec morbi convallis pretium.
-              Turpis tempus pharetra Lorem ipsum dolor sit amet consectetur.
+            { currentProject.text}
             </p>
 
             <div className="tech-info-line">
@@ -157,7 +155,7 @@ const ProjectDetails = ({ sites, items, Portfolio, work, Latest, Project }) => {
         </div>
 
         {/* ==========================================================================
-   📦 الحاوية الحقيقية والمستقلة للـ Slider الأفقي (The Best Projects)
+    الحاوية الحقيقية والمستقلة للـ Slider الأفقي (The Best Projects)
    ========================================================================== */}
         <div className="horizontal-slider-wrapper" ref={sliderRef}>
           <div className="pure-slider-row">
